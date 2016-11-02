@@ -9,7 +9,7 @@ body{
 
 header {
 	padding: 5px, 0px;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	margin-left: 0.1%;
 	margin-right: 2px;
 	height: 40px;
@@ -20,10 +20,34 @@ header {
 }
 footer{
 	padding: 0px 8px;
-	margin-top: 20%;
+	margin-top: 10%;
 	margin-bottom: 10%:
 }
 #conteudo{
 	padding: 0px 8px;
+}
+
+#login-dialog{
+	width:290px;
+	margin-bottom: 150px;
+	margin: auto;
+	margin-top: 120px;
+}
+.grid-login{
+	background-color: #f2f2f2;
+	border-radius:10px;
+	padding: 10px;
+}
+h1{
+	font-size: 24px;
+	font-weight: 500;
+	padding: 0px;
+	margin: 0px;
+}
+.rotulo{
+	width: 150px;
+}
+.ui-panelgrid ui-widget td{
+	height: 34px;
 }
 
