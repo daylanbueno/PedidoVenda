@@ -50,4 +50,10 @@ h1{
 .ui-panelgrid ui-widget td{
 	height: 34px;
 }
-
+.ajax-status{
+	position: fixed;
+	margin-top: 55px;
+	height: 35px;
+	width: 35px;
+	right: 10px;
+}
