@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   
+   <ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="titulo">  
+	</ui:define>
+	<ui:define name="corpo">
+	<h1>Pesquisa Produtos</h1>
+	
+	<h:form>
+	
+	<p:toolbar style="margin-top:20px">
+		<p:toolbarGroup>
+			<p:commandButton value="Salvar"></p:commandButton>
+		</p:toolbarGroup>
+		
+		<p:toolbarGroup align="right">
+			<p:button value="Novo" outcome="/produtos/CadastroProduto"></p:button>
+		</p:toolbarGroup>
+
+	</p:toolbar>
+
+		<p:panelGrid columns="2" id="painel" style="width:100%;margin-top:20px"
+		columnClasses="rotulo,campo">
+
+			<p:outputLabel value="SKU" for="sku" />
+			<p:inputText id="sku" size="20" />
+			
+			<p:outputLabel value="Nome" for="nome" />
+			<p:inputText id="nome" size="60" />
+	
+		</p:panelGrid>
+		
+		<p:dataTable id="produtoTabela" var="produto" value="#{pesquisaProdutoBean.produtosFiltrados}" style="margin-top:20px" 
+		emptyMessage="Nenhum produto encontrado!" rows="20" paginator="true" paginatorAlwaysVisible="false" paginatorPosition="bottom"
+		>
+		<p:column headerText="SKU" style="text-align:center; width:100px">
+			<h:outputText value="123"></h:outputText>
+		</p:column>
+		
+		<p:column headerText="Categoria" style="width:100px">
+			<h:outputText value="Doces de bolos"></h:outputText>
+		</p:column>
+		
+		<p:column headerText="Valor Unitário" style="text-align:right; width:120px">
+			<h:outputText value="1,2"></h:outputText>
+		</p:column>
+		
+		<p:column headerText="Estoque" style="text-align:center; width:100px">
+			<h:outputText value="98"></h:outputText>
+		</p:column>
+	
+		<p:column headerText="Operações" style="text-align:center; width:100px">
+			<p:button icon="ui-icon-pencil" title="Editar"></p:button>
+			<p:commandButton icon="ui-icon-trash" title="Excluir"></p:commandButton>	
+		</p:column>
+		
+		</p:dataTable>
+	</h:form>
+
+	</ui:define>
+</ui:composition>
