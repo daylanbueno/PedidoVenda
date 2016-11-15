@@ -57,3 +57,10 @@ h1{
 	width: 35px;
 	right: 10px;
 }
+
+.produto-tabela input{
+	width: 200%;
+}
+.capa-vendedor{
+	width:50%;
+}
