@@ -37,7 +37,7 @@
 	
 		</p:panelGrid>
 		
-		<p:dataTable id="produtoTabela" var="produto" value="#{pesquisaProdutoBean.produtosFiltrados}" style="margin-top:20px" 
+		<p:dataTable id="produtoTabela" var="produto" value="#{pesquisaProdutoBean.pedidosFiltrados}" style="margin-top:20px" 
 		emptyMessage="Nenhum produto encontrado!" rows="20" paginator="true" paginatorAlwaysVisible="false" paginatorPosition="bottom"
 		>
 		<p:column headerText="SKU" style="text-align:center; width:100px">
@@ -49,7 +49,7 @@
 		</p:column>
 		
 		<p:column headerText="Valor Unitário" style="text-align:right; width:120px">
-			<h:outputText value="1,2"></h:outputText>
+			<h:outputText value="1,20"></h:outputText>
 		</p:column>
 		
 		<p:column headerText="Estoque" style="text-align:center; width:100px">
