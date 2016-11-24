@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 
 @Entity
 @Table(name = "item_pedido")
@@ -22,8 +24,11 @@ public class ItemPedido implements Serializable {
 	@Id
 	@GeneratedValue
 	private Long id;
+	
+	@Null
 	@Column(nullable = false, length = 3)
 	private Integer quantidade = 1;
+	@NotNull
 	@Column(name = "valor_unitario", nullable = false, precision = 10, scale = 2)
 	private BigDecimal valorUnitario = BigDecimal.ZERO;
 	@ManyToOne

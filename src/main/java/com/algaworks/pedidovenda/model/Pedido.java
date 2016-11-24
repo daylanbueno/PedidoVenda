@@ -22,6 +22,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "pedido")
@@ -41,6 +42,7 @@ public class Pedido implements Serializable {
 	@Column(columnDefinition = "text")
 	private String observacao;
 	
+	@NotNull
 	@Temporal(TemporalType.DATE)
 	@Column(name = "data_entrega", nullable = false)
 	private Date dataEntrega;
@@ -51,6 +53,7 @@ public class Pedido implements Serializable {
 	@Column(name = "valor_desconto", nullable = false, precision = 10, scale = 2)
 	private BigDecimal valorDesconto = BigDecimal.ZERO;
 	
+	@NotNull
 	@Column(name = "valor_total", nullable = false, precision = 10, scale = 2)
 	private BigDecimal valorTotal = BigDecimal.ZERO;
 	
@@ -58,18 +61,22 @@ public class Pedido implements Serializable {
 	@Column(nullable = false, length = 20)
 	private StatusPedido status = StatusPedido.ORCAMENTO;
 	
+	@NotNull
 	@Enumerated(EnumType.STRING)
 	@Column(name = "forma_pagamento", nullable = false, length = 20)
 	private FormaPagamento formaPagamento;
 	
+	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "vendedor_id", nullable = false)
 	private Usuario vendedor;
 	
+	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "cliente_id", nullable = false)
 	private Cliente cliente;
 	
+	@NotNull
 	@Embedded
 	private EnderecoEntrega enderecoEntrega;
 	

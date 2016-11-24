@@ -10,9 +10,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.OverridesAttribute;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -29,8 +31,9 @@ public class Produto implements Serializable {
 	@NotBlank @Size(max=80)
 	private String nome;
 	
-	@NotBlank
+	@NotBlank @Pattern(regexp="([a-zA-Z]{2}\\d{4,18})?",message="Voce deve informar um SKU valido ex: XX9999")
 	private String sku;
+
 	
 	@NotNull
 	private BigDecimal valorUnitario;

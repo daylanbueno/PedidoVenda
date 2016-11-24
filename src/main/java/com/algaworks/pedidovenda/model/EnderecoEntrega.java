@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.validation.constraints.NotNull;
 
 
 @Embeddable
@@ -12,12 +13,16 @@ public class EnderecoEntrega implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	
+	@NotNull
 	private String logradouro;
 	private String numero;
 	private String complemento;
+	@NotNull
 	private String cidade;
+	@NotNull
 	private String uf;
 	private String cep;
+	@NotNull
 	private String estado;
 
 	@Column(name = "entrega_logradouro", nullable = false, length = 150)
