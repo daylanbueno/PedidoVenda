@@ -11,6 +11,7 @@ public class EnderecoEntrega implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	
 	private String logradouro;
 	private String numero;
 	private String complemento;
