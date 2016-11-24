@@ -12,11 +12,13 @@
 	</ui:define>
 	<ui:define name="corpo">
 	<h1>Novo produto</h1>
+	
+	<p:messages  autoUpdate="true" closable="true"></p:messages>
 	<h:form>
 	<p:toolbar style="margin-top:20px">
 		<p:toolbarGroup>
 			<p:button value="Novo" outcome="/produtos/CadastroProduto"></p:button>
-			<p:commandButton value="Salvar"></p:commandButton>
+			<p:commandButton value="Salvar" action="#{cadastroProdutoBean.salvar}"></p:commandButton>
 		</p:toolbarGroup>
 		
 		<p:toolbarGroup align="right">
@@ -29,26 +31,28 @@
 		columnClasses="rotulo,campo">
 
 			<p:outputLabel value="SKU" for="sku" />
-			<p:inputText id="sku" size="20" maxlength="10" />
+			<p:inputText id="sku" size="20" maxlength="10" value="#{cadastroProdutoBean.protudo.sku}" />
 			
 			<p:outputLabel value="Nome" for="nome" />
-			<p:inputText id="nome" size="60" maxlength="80" />
+			<p:inputText id="nome" size="60" maxlength="80" value="#{cadastroProdutoBean.protudo.nome}"/>
 
-			<p:outputLabel value="Categoria" for="categoria" />
+			<p:outputLabel value="Categoria" for="categoria"  />
 			 <p:selectOneMenu id="categoria">
-			 	<f:selectItem itemLabel=" Selecione a categoria"/>
+			 	<f:selectItem itemLabel=" Selecione a categoria" />
 			 </p:selectOneMenu>
 			 
 			<p:outputLabel value="Subcategoria" for="subCategoria" />
-			 <p:selectOneMenu id="subCategoria">
+			 <p:selectOneMenu id="subCategoria"  value="#{cadastroProdutoBean.protudo.categoria}" >
 			 	<f:selectItem itemLabel=" Selecione a categoria"/>
 			 </p:selectOneMenu>
 			 
 			 <p:outputLabel value="Valor Unitário" for="valorUnitario" />
-			 <p:inputText id="valorUnitario" size="10" maxlength="10" styleClass="moeda" />
-			
+			 <p:inputText id="valorUnitario" size="10" maxlength="10" styleClass="moeda"  value="#{cadastroProdutoBean.protudo.valorUnitario}"> 
+			 	<f:convertNumber maxFractionDigits="2" minFractionDigits="2"/>	
+			</p:inputText>			 
+  			
 			 <p:outputLabel value="Estoque" for="estoque" />
-			 <p:inputText id="estoque" size="10" maxlength="10" />
+			 <p:inputText id="estoque" size="10" maxlength="5" value="#{cadastroProdutoBean.protudo.quantidadeEstoque}"/>
 			
 			
 		</p:panelGrid>
