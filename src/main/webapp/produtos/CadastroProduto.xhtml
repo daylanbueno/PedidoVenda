@@ -13,7 +13,7 @@
 	<ui:define name="corpo">
 	<h1>Novo produto</h1>
 	
-	<p:messages  autoUpdate="true" closable="true"></p:messages>
+	<p:messages autoUpdate="true"  closable="true"></p:messages>
 	<h:form>
 	<p:toolbar style="margin-top:20px">
 		<p:toolbarGroup>
@@ -31,7 +31,7 @@
 		columnClasses="rotulo,campo">
 
 			<p:outputLabel value="SKU" for="sku" />
-			<p:inputText id="sku" size="20" maxlength="10" value="#{cadastroProdutoBean.protudo.sku}" />
+			<p:inputText id="sku" size="20" maxlength="10" value="#{cadastroProdutoBean.protudo.sku}" required="true" requiredMessage="Você deve informa o SKU" />
 			
 			<p:outputLabel value="Nome" for="nome" />
 			<p:inputText id="nome" size="60" maxlength="80" value="#{cadastroProdutoBean.protudo.nome}"/>
