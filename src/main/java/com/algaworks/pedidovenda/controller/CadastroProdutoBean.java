@@ -33,7 +33,7 @@ public class CadastroProdutoBean implements Serializable{
 	
 	@PostConstruct
 	public void initicalizacao(){
-		System.out.println("inicializando!");
+		System.out.println("inicializando...!");
 		categoriasRaizes =manager.createQuery("from Categoria",Categoria.class).getResultList();
 	}
 	

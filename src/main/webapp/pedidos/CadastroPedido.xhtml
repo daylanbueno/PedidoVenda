@@ -11,7 +11,15 @@
 	<ui:define name="titulo"></ui:define>  
 	<ui:define name="corpo">
 	<h1>Novo Pedido</h1>
+	
+	<f:metadata>
+		<f:viewParam name="nanana"/>
+		<f:event listener="#{cadastroProdutoBean.initicalizacao}" type="preRenderView"/>
+	</f:metadata>
+	
 	<p:messages autoUpdate="true" closable="true"></p:messages>
+	
+
 	<h:form>
 		<ui:include src="/WEB-INF/template/pedidos/BotoesPedido.xhtml"></ui:include>
 		<ui:include src="/WEB-INF/template/pedidos/CapaPedido.xhtml"></ui:include>	
